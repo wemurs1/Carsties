@@ -55,6 +55,16 @@ services:
     depends_on:
       - mongodb
       - rabbitmq
+  gateway-svc:
+    image: wemurs1/gateway-svc:latest
+    build: 
+      context: .
+      dockerfile: src/GatewayService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - 6001:80
   identity-svc:
     image: wemurs1/identity-svc:latest
     build: 
