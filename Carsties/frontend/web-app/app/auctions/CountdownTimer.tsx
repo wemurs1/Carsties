@@ -27,7 +27,7 @@ const renderer = ({
         border-to border-white text-white py-1 px-2 rounded-lg flex justify-center
         ${
           completed
-            ? 'border-red-600'
+            ? 'bg-red-600'
             : days === 0 && hours < 10
             ? 'bg-amber-600'
             : 'bg-green-600'
