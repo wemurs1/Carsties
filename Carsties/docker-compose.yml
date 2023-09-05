@@ -78,6 +78,13 @@ services:
       - 5000:80
     depends_on:
       - postgres
+  bidding-svc:
+    image: wemurs1/bid-svc:latest
+    build:
+      context: .
+      dockerfile: src/BiddingService/Dockerfile
+    depends_on:
+      - mongodb
 volumes:
   pgdata:
   mongodata:

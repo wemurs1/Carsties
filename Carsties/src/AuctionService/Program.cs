@@ -1,4 +1,3 @@
-using AuctionService;
 using AuctionService.Consumers;
 using AuctionService.Data;
 using MassTransit;
