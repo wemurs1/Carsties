@@ -79,7 +79,7 @@ services:
     depends_on:
       - postgres
   bidding-svc:
-    image: wemurs1/bid-svc:latest
+    image: wemurs1/bidding-svc:latest
     build:
       context: .
       dockerfile: src/BiddingService/Dockerfile
