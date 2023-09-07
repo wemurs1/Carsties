@@ -24,7 +24,7 @@ export default function BidItem({ bid }: Props) {
 
       case "TooLow":
         bgColor = "bg-red-200";
-        text = "Bis was too low";
+        text = "Bid was too low";
         break;
 
       default:
