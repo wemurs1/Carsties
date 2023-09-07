@@ -38,8 +38,10 @@ export default async function Details({ params }: { params: { id: string } }) {
         <div className='w-full bg-gray-200 aspect-h-10 aspect-w-16 rounded-lg overflow-hidden'>
           <CarImage imageUrl={data.imageUrl} />
         </div>
+
         <BidList user={user} auction={data} />
       </div>
+
       <div className='mt-3 grid grid-cols-1 rounded-lg'>
         <DetailedSpecs auction={data} />
       </div>
