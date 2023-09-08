@@ -3,14 +3,16 @@ import { create } from "zustand";
 
 type State = {
   bids: Bid[];
+  open: boolean;
 };
 
 type Actions = {
   setBids: (bids: Bid[]) => void;
   addBid: (bid: Bid) => void;
+  setOpen: (value: boolean) => void;
 };
 
-const initialState: State = { bids: [] };
+const initialState: State = { bids: [], open: true };
 
 export const useBidStore = create<State & Actions>((set) => ({
   ...initialState,
@@ -25,5 +27,9 @@ export const useBidStore = create<State & Actions>((set) => ({
         ? [bid, ...state.bids]
         : [...state.bids],
     }));
+  },
+
+  setOpen: (value: boolean) => {
+    set(() => ({ open: value }));
   },
 }));
