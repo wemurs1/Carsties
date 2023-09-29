@@ -167,7 +167,7 @@ services:
       custom:
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - /certs:/etc/nginx/certs
+      - ./devcerts:/etc/nginx/certs
 volumes:
   pgdata:
   mongodata:
