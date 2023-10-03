@@ -26,7 +26,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: notify-clusterid
+  name: notify-clusterip
 spec:
   type: ClusterIP
   selector:
