@@ -1,10 +1,9 @@
-using Duende.IdentityServer;
+using Duende.IdentityServer.Services;
 using IdentityService.Data;
 using IdentityService.Models;
 using IdentityService.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
 namespace IdentityService;
@@ -65,6 +64,17 @@ internal static class HostingExtensions
 
         app.UseStaticFiles();
         app.UseRouting();
+
+        if (app.Environment.IsProduction())
+        {
+            app.Use(async (ctx, next) =>
+            {
+                var serverUrls = ctx.RequestServices.GetRequiredService<IServerUrls>();
+                serverUrls.Origin = "https://id.gresham-nisus.com";
+                await next();
+            });
+        }
+
         app.UseIdentityServer();
         app.UseAuthorization();
 
