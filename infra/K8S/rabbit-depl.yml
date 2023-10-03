@@ -21,9 +21,9 @@ spec:
               value: rabbit
           ports:
             - containerPort: 15672
-              name: rbmq-mgmt-post
+              name: rbmq-mgmt-port
             - containerPort: 5672
-              name: rbmq-msg-post
+              name: rbmq-msg-port
           volumeMounts:
             - mountPath: /var/data/rabbit
               name: rabbitdata

@@ -16,10 +16,10 @@ spec:
           image: wemurs1/gateway-svc
           imagePullPolicy: Never
           env:
-            - name: VIRTUAL_HOST
-              value: api.carsties.com
             - name: ClientApp
               value: https://app.carsties.com
+            - name: IdentityServiceUrl
+              value: https://id.gresham-nisus.com
 ---
 apiVersion: v1
 kind: Service
