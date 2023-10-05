@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: notify-svc
-          image: trycatchlearn/notify-svc
+          image: wemurs1/notify-svc
           imagePullPolicy: Always
           env:
             - name: RabbitMq__Host
