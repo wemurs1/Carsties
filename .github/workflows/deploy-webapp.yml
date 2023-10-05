@@ -9,7 +9,7 @@ on:
 
 env:
   REGISTRY_IMAGE: wemurs1/web-app
-  DOCKERFILE: sfrontend/web-app/Dockerfile
+  DOCKERFILE: frontend/web-app/Dockerfile
   DEPLOYMENT_NAME: webapp
 
 jobs:
